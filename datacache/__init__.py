@@ -1,3 +1,5 @@
+from __future__ import print_function, division, absolute_import
+
 from .download import fetch_file, fetch_and_transform, fetch_csv_dataframe
 from .fasta import fetch_fasta_dict
 from .db import fetch_fasta_db, db_from_dataframe, fetch_csv_db

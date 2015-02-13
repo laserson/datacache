@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from __future__ import print_function, division, absolute_import
+
 import gzip
 from os import remove
 from os.path import (exists, splitext)
@@ -84,7 +86,7 @@ def _download(filename, full_path, download_url):
         with gzip.GzipFile(tmp_path) as src:
             contents = src.read()
         remove(tmp_path)
-        with open(full_path, 'w') as dst:
+        with open(full_path, 'wb') as dst:
             dst.write(contents)
     elif download_url.endswith(("html", "htm")):
         logging.info("Extracting HTML table into CSV %s...", filename)

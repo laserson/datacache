@@ -1,3 +1,5 @@
+from __future__ import print_function, division, absolute_import
+
 from Bio import SeqIO
 
 from .download import fetch_file

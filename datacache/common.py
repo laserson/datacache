@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from __future__ import print_function, division, absolute_import
 
 import hashlib
 import logging
@@ -65,7 +66,7 @@ def build_local_filename(download_url=None, filename=None, decompress=False):
 
     # if no filename provided, use the original filename on the server
     if not filename:
-        digest = hashlib.md5(download_url.encode('utf-8')).hexdigest()
+        digest = hashlib.md5(download_url.encode()).hexdigest()
         parts = split(download_url)
         filename =  digest + "." + "_".join(parts)
 
